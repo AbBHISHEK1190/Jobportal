@@ -47,9 +47,10 @@ Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'App\Http\Controll
         });
 
 
-        Route::group(['middleware'=>['auth','employee']], function () {
+        Route::group(['as'=>'iuser','prefix' => 'iuser','namespace'=>'App\Http\Controllers\employee','middleware'=>['auth','employee']], function () {
             // echo 'j';die;		
                 Route::get('dashboard', 'Home@index');
-            //    Route::get('all_category', 'Product_categories@index');
+               Route::get('jobprofile', 'Home@jobprofile');
+               Route::post('jobprofile', 'Home@jobprofile');
                   
             });

@@ -44,10 +44,10 @@ class LoginController extends Controller
             $this->redirectTo = url('recruiter/dashboard');
             return $this->redirectTo;
                 break;
-                // case 3:
-                //     $this->redirectTo = url('/home');
-                //     return $this->redirectTo;
-                //         break;
+                case 3:
+                    $this->redirectTo = url('iuser/dashboard');
+                    return $this->redirectTo;
+                        break;
           default:
                 $this->redirectTo = '/login';
                 return $this->redirectTo;

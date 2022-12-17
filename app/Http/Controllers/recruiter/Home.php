@@ -26,7 +26,7 @@ class Home extends Controller
             'hiring_manager'=>'required',
             'total_employee'=>'required',
             'heard_source'=>'required',
-            'mobile'=>'required','min:10','max:10',
+            'mobile'=>['required','min:10','max:10'],
             'industry_type'=>'required',
             'company_desc'=>'required',
                    
@@ -49,7 +49,7 @@ class Home extends Controller
                   'job_location'=>'required',
                   'job_type'=>'required',
                   'no_of_hire'=>'required',
-                  'mobile'=>'required','min:10','max:10',
+                  'mobile'=>['required','min:10','max:10'],
                   'min_package'=>'required',
                   'max_package'=>'required',
                   'any_benfits'=>'required',
