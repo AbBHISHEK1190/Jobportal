@@ -26,8 +26,8 @@ class Home extends Controller
             'hiring_manager'=>'required',
             'total_employee'=>'required',
             'heard_source'=>'required',
-            'mobile'=>'required',
-            'industry_type'=>'required','min:10','max:10',
+            'mobile'=>'required','min:10','max:10',
+            'industry_type'=>'required',
             'company_desc'=>'required',
                    
         ]);
@@ -76,8 +76,8 @@ class Home extends Controller
 
     function alljoblist()
     {
-        
-        $data['alljoblst']=Joblist::all();
+       
+        $data['alljoblst']=Joblist::where('user_id',Auth::user()->id)->get();
         return view('recruiter/alljoblist',$data);
     }
 
