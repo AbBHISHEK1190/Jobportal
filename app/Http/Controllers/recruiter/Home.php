@@ -67,7 +67,7 @@ class Home extends Controller
               $array['status']=1;
             //   print_r($array);die;
               $affectedRows = Joblist::create($array);
-              return   redirect('recruiter/addjobs')->with('success', 'Job created successfully');
+              return   redirect('recruiter/alljoblist')->with('success', 'Job created successfully');
           }
 
         return view('recruiter/addjobs',$data);
@@ -83,12 +83,11 @@ class Home extends Controller
 
     function jobstatus(Request $request)
     {
-        // echo $request->status;die;
-    //   exit('djdjd');    
+        
     $array=  $request->validate([
         'status'=>'required',
     ]);
-    // print_r($array);die;
+    
       $affectedRows = Joblist::where("id",$request->jobid)->update($array);
       return   redirect('recruiter/alljoblist')->with('success', 'Status updated successfully');
     }

@@ -242,6 +242,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ url('recruiter/addjobs') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Job</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ url('recruiter/alljoblist') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All Job List</p>
@@ -879,7 +885,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">{{ strtoupper(Request::segment(2)) }}</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
