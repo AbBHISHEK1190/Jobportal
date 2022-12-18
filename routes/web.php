@@ -42,6 +42,10 @@ Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'App\Http\Controll
            Route::get('alljoblist', 'Home@alljoblist');
            Route::post('jobstatus', 'Home@jobstatus');
            Route::get('jobstatus', 'Home@jobstatus');
+           Route::post('candidatelist', 'Home@candidatelist');
+           Route::get('candidatelist', 'Home@candidatelist');
+           Route::post('candidadetail/{id}', 'Home@candidadetail');
+
            
               
         });

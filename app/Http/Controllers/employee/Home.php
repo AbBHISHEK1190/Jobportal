@@ -53,9 +53,20 @@ class Home extends Controller
         $affectedRows = Employeedetail::create($array);
         return   redirect('iuser/jobprofile')->with('success', 'Profile updated successfully');
     }
+       $data['employeedetail']=Employeedetail::where('user_id',Auth::user()->id)->get();
        $data['industry']= Industry::all();
     
         return view('employee/profile',$data);
         
+    }
+
+    function joblist()
+    {
+
+    }
+
+    function appliedjob()
+    {
+
     }
 }

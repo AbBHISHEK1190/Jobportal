@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Industry;
 use App\Models\User;
 use App\Models\Joblist;
+use App\Models\Employeedetail;
 use Illuminate\Support\Facades\Auth;
 class Home extends Controller
 {
@@ -90,5 +91,20 @@ class Home extends Controller
     
       $affectedRows = Joblist::where("id",$request->jobid)->update($array);
       return   redirect('recruiter/alljoblist')->with('success', 'Status updated successfully');
+    }
+    function candidatelist()
+    {
+        $data['employeedetail']= Employeedetail::join('users','employeedetails.user_id','=','users.id')->get(['employeedetails.*','users.name']);
+        // print_r($data);die;
+        return view('recruiter/candidatelist',$data);
+
+    }
+
+    function candidadetail($id)
+    {
+       $data['employeedetail']=Employeedetail::where('id',$id)->get();
+       $data['industry']= Industry::all();
+    
+        return view('recruiter/candidadetail',$data);
     }
 }

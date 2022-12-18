@@ -252,9 +252,28 @@
                   <p>All Job List</p>
                 </a>
               </li>
+              @elseif(Auth::user()->account_type == 3)
+              <li class="nav-item">
+                <a href="{{ url('iuser/jobprofile') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>My Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('iuser/joblist') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>My Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('iuser/appliedjob') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>My Profile</p>
+                </a>
+              </li>
   @endif
             
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v2</p>
@@ -267,7 +286,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
