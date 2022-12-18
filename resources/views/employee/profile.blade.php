@@ -64,6 +64,15 @@
                   </select>
                 </div>
                 <div class="form-group">
+                  <label>Employment Type</label>
+                  <select class="form-control select2" name="employment_type" style="width: 100%;">
+                  <option>Select</option>
+                    <option value="fulltime">Fulltime</option>
+                    <option value="parttime">Part Time</option>
+                    <option value="freelancer">Freelancer</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label>Current Company</label>
                   <input type="text" class="form-control select2" name="current_company" style="width: 100%;">
                 </div>
