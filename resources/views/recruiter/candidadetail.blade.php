@@ -7,8 +7,8 @@
     {{ implode('', $errors->all()) }}
 @endif
   </p>
-        <form action="{{url('iuser/jobprofile')}}" method="post" enctype="multipart/form-data">
-        @csrf
+      
+       
         <div class="card card-default">
           <div class="card-header">
             <h3 class="card-title">{{ strtoupper(Request::segment(2)) }}</h3>
@@ -106,11 +106,11 @@
                   <label>Current Salary</label>
                   <input type="number" class="form-control select2" name="current_salary" value="{{$empdata->current_salary}}" style="width: 100%;">
                 </div>
-                <div class="form-group">
-                  <label>Upload  Cv</label>
-                  <input type="file" class="form-control select2" name="cv_name" style="width: 100%;">
-                </div>
-                
+              
+                <form action="{{url('recruiter/downloadcv',[$empdata->cv_name])}}" method="post">
+                    @csrf
+                    <button>Download Cv</button>
+</form>
               
                 <!-- /.form-group -->
               
@@ -121,8 +121,9 @@
           </div>
         
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    
+        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
      
 
 

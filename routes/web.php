@@ -45,6 +45,8 @@ Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'App\Http\Controll
            Route::post('candidatelist', 'Home@candidatelist');
            Route::get('candidatelist', 'Home@candidatelist');
            Route::post('candidadetail/{id}', 'Home@candidadetail');
+           Route::post('downloadcv/{id}', 'Home@downloadcv');
+           Route::get('downloadcv/{id}', 'Home@downloadcv');
 
            
               

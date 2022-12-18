@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Joblist;
 use App\Models\Employeedetail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 class Home extends Controller
 {
     public function index()
@@ -107,4 +108,15 @@ class Home extends Controller
     
         return view('recruiter/candidadetail',$data);
     }
+    function downloadcv($id)
+    {
+        
+        $file= public_path(). "/assets/cv/$id";
+    $headers = array(
+              'Content-Type: application/pdf',
+            );
+
+    return Response::download($file, 'filename.pdf', $headers);
+    }
+    
 }
