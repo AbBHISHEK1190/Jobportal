@@ -183,8 +183,20 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    
+    @if(Auth::user()->account_type == 1)
+    <a href="{{url('admin/dashboard')}}" class="brand-link">  
+    <img src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+
+      @elseif(Auth::user()->account_type == 2)
+      <a href="{{url('recruiter/dashboard')}}" class="brand-link">
       <img src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+
+    @elseif(Auth::user()->account_type == 3)
+    <a href="{{url('iuser/dashboard')}}" class="brand-link">
+    <img src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+
+  @endif
       <span class="brand-text font-weight-light">
       @if(Auth::user()->account_type == 1)  
       Admin Panel
@@ -250,6 +262,12 @@
                 <a href="{{ url('recruiter/alljoblist') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All Job List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('recruiter/candidatelist') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Candidate List</p>
                 </a>
               </li>
               @elseif(Auth::user()->account_type == 3)
