@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('minimum_education');
             $table->string('level_of_exprerienc');
             $table->string('status');
+            $table->string('all_applied')->nullable();
             $table->timestamps();
         });
     }

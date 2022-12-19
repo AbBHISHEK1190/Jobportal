@@ -277,16 +277,11 @@
                   <p>My Profile</p>
                 </a>
               </li>
+           
               <li class="nav-item">
                 <a href="{{ url('iuser/joblist') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>My Profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('iuser/appliedjob') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>My Profile</p>
+                  <p>Job List</p>
                 </a>
               </li>
   @endif

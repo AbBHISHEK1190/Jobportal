@@ -62,11 +62,29 @@ class Home extends Controller
 
     function joblist()
     {
+        $data['Joblist']= Joblist::all();
 
+        return view('employee/joblist',$data);
     }
 
-    function appliedjob()
+    function appliedjob($id)
     {
+
+    $data=  Joblist::where('id',$id)->first();
+   
+    $explode=explode(',',$data->all_applied);
+    
+    if(in_array(Auth::user()->id,$explode))
+    {
+        return   redirect('iuser/joblist')->with('success', 'You have Already Applied  for this job');
+    }
+    else
+    {
+        $all_applied= $data->all_applied.','.Auth::user()->id;
+        $data['Joblist']= Joblist::where('id',$id)->update(['all_applied'=>$all_applied]);
+        return   redirect('iuser/joblist')->with('success', 'Applied  successfully');
+    }
+   
 
     }
 }

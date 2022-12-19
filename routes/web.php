@@ -58,5 +58,9 @@ Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'App\Http\Controll
                 Route::get('dashboard', 'Home@index');
                Route::get('jobprofile', 'Home@jobprofile');
                Route::post('jobprofile', 'Home@jobprofile');
+               Route::get('joblist', 'Home@joblist');
+               Route::post('joblist', 'Home@joblist');
+               Route::post('appliedjob/{id}', 'Home@appliedjob');
+               Route::get('appliedjob/{id}', 'Home@appliedjob');
                   
             });

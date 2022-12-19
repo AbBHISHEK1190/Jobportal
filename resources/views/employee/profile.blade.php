@@ -74,6 +74,7 @@
 
                   <option value="{{$item->id}}" {{$empdata->employment_type == $item->id  ? 'selected' : ''}}>{{$item->industry_type}}</option>
                     @endforeach
+                    freelancer" {{$empdata->employment_type == 'freelancer'  ? 'selected' : ''}}>Freelancer</option>
                   </select>
                 </div>
                 <div class="form-group">
