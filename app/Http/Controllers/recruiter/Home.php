@@ -10,6 +10,8 @@ use App\Models\Joblist;
 use App\Models\Employeedetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\DB
+;
 class Home extends Controller
 {
     public function index()
@@ -118,5 +120,51 @@ class Home extends Controller
 
     return Response::download($file, 'filename.pdf', $headers);
     }
+
+    function received_application()
+    {
+
+        $data['alljoblst']=Joblist::where('user_id',Auth::user()->id)->get();
+        return view('recruiter/receivedapplication',$data);
+
+    }
     
+    function candiates_response($id)
+    {
+        DB::enableQueryLog();
+
+$joblists=array();
+        
+        $data=  Joblist::where('id',$id)->first();
+        $explode=explode(',',$data->all_applied);
+        // print_r($explode);die;
+        // $data['employeedetail']= Employeedetail::whereIn('users.id',array(5))->join('users','employeedetails.user_id','=','users.id')->get(['employeedetails.*','users.name']);
+        foreach($explode as $es)
+{
+    $joblists[]=  Employeedetail::join('users','employeedetails.user_id','=','users.id')->where('users.id',$es)->get(['employeedetails.*','users.name']);
+
+
+}
+
+        // $query = DB::getQueryLog();
+            // dd($query);
+            // echo 'ss';    
+      echo 'as';  print_r($joblists);die;
+        foreach($explode as $es)
+        {
+            // echo $es;
+            $data['employeedetail']= Employeedetail::join('users','employeedetails.user_id','=','users.id')->get(['employeedetails.*','users.name']);
+
+            $joblists[]= Joblist::join('users','joblists.user_id','=','users.id')->where('users.id',$es)->get(['joblists.*','users.name']);
+
+        }
+        $query = DB::getQueryLog();
+        dd($query);
+        print_r($joblists);die;
+   
+    print_r($explode);die;
+print_r($id);die;
+// $data= Joblist::join('users','employeedetails.user_id','=','users.id')->get(['employeedetails.*','users.name']);
+
+    }
 }
