@@ -1011,7 +1011,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('assets/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('assets/dist/js/demo.js')}}"></script>
+<!-- <script src="{{asset('assets/dist/js/demo.js')}}"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('assets/dist/js/pages/dashboard.js')}}"></script>
 <!-- @vite(['resources/assets/plugins/jquery/jquery.min.js','resources/assets/plugins/bootstrap/js/bootstrap.bundle.min.js','resources/assets/plugins/chart.js/Chart.min.js','resources/assets/plugins/sparklines/sparkline.js','resources/assets/plugins/jqvmap/jquery.vmap.min.js','resources/assets/plugins/jqvmap/maps/jquery.vmap.usa.js','resources/assets/plugins/jquery-knob/jquery.knob.min.js','resources/assets/plugins/moment/moment.min.js','resources/assets/plugins/daterangepicker/daterangepicker.js','resources/assets/plugins/daterangepicker/daterangepicker.js','resources/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js','resources/assets/plugins/summernote/summernote-bs4.min.js','resources/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js','resources/assets/dist/js/adminlte.js','resources/assets/dist/js/demo.js','resources/assets/dist/js/pages/dashboard.js']) -->
