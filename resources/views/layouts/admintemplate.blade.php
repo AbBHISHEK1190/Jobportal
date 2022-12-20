@@ -291,6 +291,20 @@
                   <p>Job List</p>
                 </a>
               </li>
+              @elseif(Auth::user()->account_type == 1)
+              <li class="nav-item">
+                <a href="{{ url('admin/recruiter_list') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Recruiter List</p>
+                </a>
+              </li>
+           
+              <li class="nav-item">
+                <a href="{{ url('admin/jobseeker_list') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jobseeker List</p>
+                </a>
+              </li>
   @endif
             
               <!-- <li class="nav-item">

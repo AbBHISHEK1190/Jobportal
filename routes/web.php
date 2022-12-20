@@ -26,7 +26,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'App\Http\Controllers\admin','middleware'=>['auth','admin']], function () {
 // echo 'j';die;		
     Route::get('dashboard', 'Home@index');
-//    Route::get('all_category', 'Product_categories@index');
+    Route::post('recruiter_list', 'Home@recruiter_list');
+    Route::get('recruiter_list', 'Home@recruiter_list');
+    Route::get('jobseeker_list', 'Home@jobseeker_list');
+    Route::post('jobseeker_list', 'Home@jobseeker_list');
       
 });
 

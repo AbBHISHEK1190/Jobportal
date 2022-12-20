@@ -33,7 +33,7 @@
                                 <select id="account_type" class="form-control @error('account_type') is-invalid @enderror" name="account_type" value="{{ old('name') }}" required>
                                 <option>select</option>
 
-  <option value="1">Admin</option>
+  <!-- <option value="1">Admin</option> -->
   <option value="2">Recruiter</option>
   <option value="3">Jobseeker</option>
 </select>
