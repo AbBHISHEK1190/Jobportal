@@ -270,6 +270,13 @@
                   <p>All Candidate List</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ url('recruiter/received_application') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Received Application</p>
+                </a>
+              </li>
+              
               @elseif(Auth::user()->account_type == 3)
               <li class="nav-item">
                 <a href="{{ url('iuser/jobprofile') }}" class="nav-link">
